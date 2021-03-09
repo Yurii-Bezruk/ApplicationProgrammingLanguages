@@ -19,6 +19,9 @@ namespace lab1_2
         {
             this.parentPen = parent;
             InitializeComponent();
+            numericUpDown1.Value = (decimal)parentPen.Width;
+            trackBar1.Value = (int) parentPen.Width;
+            repaintLine();
         }
 
         private void button1_Click(object sender, EventArgs e)

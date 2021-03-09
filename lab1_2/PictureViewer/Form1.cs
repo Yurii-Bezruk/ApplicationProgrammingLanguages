@@ -79,9 +79,7 @@ namespace PictureViewer
         private void pageSetupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (pageSetupDialog1.ShowDialog(this) == DialogResult.OK)
-            {
-                //pageSetupDialog1.
-            }
+            {}
         }
 
         private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,10 +95,10 @@ namespace PictureViewer
         private void PrintPage(object o, PrintPageEventArgs e)
         {                 
             Bitmap bmp = new Bitmap(pictureBox1.Image,
-                                    pictureBox1.Image.Width * 4,
-                                    pictureBox1.Image.Height * 4);
+                                    pictureBox1.Image.Width * 2,
+                                    pictureBox1.Image.Height * 2);
             e.Graphics.DrawImage((Image) bmp, new Point(10 ,10));
-            e.Graphics.DrawString("Размер изображения: " + bmp.Size.ToString(),
+            e.Graphics.DrawString("Размер изображения: " + bmp.Size.ToString() + "\nПуть: " + path,
                                 new Font(this.Font.Name, this.Font.Size * 3, this.Font.Style),
                                 Brushes.Black,
                                 new Point(20, bmp.Height+30));
